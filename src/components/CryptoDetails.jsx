@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
@@ -22,7 +22,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
   const { coinId } = useParams();
-  const [timePeriod, setTimePeriod] = useState("7d");
+  //const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
   const cryptoDetails = data?.data?.coin;
 
@@ -101,7 +101,7 @@ const CryptoDetails = () => {
         defaultValue="7d"
         className="select-timeperiod"
         placeholder="Select Time Period"
-        onChange={(value) => setTimePeriod(value)}
+        onChange={(value) => {}}
       >
         {time.map((date) => (
           <Option key={date}>{date}</Option>
